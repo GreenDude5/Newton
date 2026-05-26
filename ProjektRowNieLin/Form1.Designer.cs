@@ -44,6 +44,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.comboBoxMode = new System.Windows.Forms.ComboBox();
+            this.labelMode = new System.Windows.Forms.Label();
+            this.labelXcel = new System.Windows.Forms.Label();
+            this.labelYcel = new System.Windows.Forms.Label();
+            this.textBoxXcel = new System.Windows.Forms.TextBox();
+            this.textBoxYcel = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -98,7 +104,7 @@
             legend1.Enabled = false;
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(371, 12);
+            this.chart1.Location = new System.Drawing.Point(385, 12);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
@@ -122,7 +128,7 @@
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(621, 537);
+            this.chart1.Size = new System.Drawing.Size(797, 649);
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
             // 
@@ -153,7 +159,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProjektRowNieLin.Properties.Resources.Wykres2;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 340);
+            this.pictureBox2.Location = new System.Drawing.Point(21, 452);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(344, 209);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -163,7 +169,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProjektRowNieLin.Properties.Resources.Wykres1;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 177);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 287);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(344, 157);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,11 +189,77 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // comboBoxMode
+            // 
+            this.comboBoxMode.FormattingEnabled = true;
+            this.comboBoxMode.Items.AddRange(new object[] {
+            "Przecięcie okręgu i elipsy",
+            "Kinematyka odwrotna 2D"});
+            this.comboBoxMode.Location = new System.Drawing.Point(31, 212);
+            this.comboBoxMode.Name = "comboBoxMode";
+            this.comboBoxMode.Size = new System.Drawing.Size(293, 21);
+            this.comboBoxMode.TabIndex = 9;
+            this.comboBoxMode.Text = "Przecięcie okręgu i elipsy";
+            this.comboBoxMode.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMode_SelectedIndexChanged);
+            // 
+            // labelMode
+            // 
+            this.labelMode.AutoSize = true;
+            this.labelMode.Location = new System.Drawing.Point(31, 191);
+            this.labelMode.Name = "labelMode";
+            this.labelMode.Size = new System.Drawing.Size(60, 13);
+            this.labelMode.TabIndex = 10;
+            this.labelMode.Text = "Tryb pracy:";
+            // 
+            // labelXcel
+            // 
+            this.labelXcel.AutoSize = true;
+            this.labelXcel.Location = new System.Drawing.Point(31, 235);
+            this.labelXcel.Name = "labelXcel";
+            this.labelXcel.Size = new System.Drawing.Size(37, 13);
+            this.labelXcel.TabIndex = 11;
+            this.labelXcel.Text = "X_cel:";
+            this.labelXcel.Visible = false;
+            // 
+            // labelYcel
+            // 
+            this.labelYcel.AutoSize = true;
+            this.labelYcel.Location = new System.Drawing.Point(31, 261);
+            this.labelYcel.Name = "labelYcel";
+            this.labelYcel.Size = new System.Drawing.Size(37, 13);
+            this.labelYcel.TabIndex = 12;
+            this.labelYcel.Text = "Y_cel:";
+            this.labelYcel.Visible = false;
+            // 
+            // textBoxXcel
+            // 
+            this.textBoxXcel.Location = new System.Drawing.Point(136, 235);
+            this.textBoxXcel.Name = "textBoxXcel";
+            this.textBoxXcel.Size = new System.Drawing.Size(78, 20);
+            this.textBoxXcel.TabIndex = 13;
+            this.textBoxXcel.Text = "3.5";
+            this.textBoxXcel.Visible = false;
+            // 
+            // textBoxYcel
+            // 
+            this.textBoxYcel.Location = new System.Drawing.Point(136, 261);
+            this.textBoxYcel.Name = "textBoxYcel";
+            this.textBoxYcel.Size = new System.Drawing.Size(78, 20);
+            this.textBoxYcel.TabIndex = 14;
+            this.textBoxYcel.Text = "2.0";
+            this.textBoxYcel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 561);
+            this.ClientSize = new System.Drawing.Size(1194, 673);
+            this.Controls.Add(this.textBoxYcel);
+            this.Controls.Add(this.textBoxXcel);
+            this.Controls.Add(this.labelYcel);
+            this.Controls.Add(this.labelXcel);
+            this.Controls.Add(this.labelMode);
+            this.Controls.Add(this.comboBoxMode);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -222,6 +294,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxMode;
+        private System.Windows.Forms.Label labelMode;
+        private System.Windows.Forms.Label labelXcel;
+        private System.Windows.Forms.Label labelYcel;
+        private System.Windows.Forms.TextBox textBoxXcel;
+        private System.Windows.Forms.TextBox textBoxYcel;
     }
 }
 
